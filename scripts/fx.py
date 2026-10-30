@@ -28,9 +28,9 @@ KO_FONT = {k: os.path.join(ROOT, 'fonts', v) for k, v in {
 KO_WGHT = {'bold': 900, 'ui': 600, 'uim': 500, 'uib': 800, 'mont': 700, 'monts': 600, 'montb': 800}  # Pretendard variable: weight
 KO_SCALE = {'hand': 1.25, 'serif': 0.92}  # 한글 폰트가 영문보다 작거나 크게 보이는 만큼 보정
 CREAM, INK, PEACH, YELLOW = (244, 233, 216), (22, 22, 24), (255, 183, 165), (255, 214, 10)
-NAMES = ['릴스 더미', '라인업', '락온', '궤도', '줌인', '뒤 글자', '스포트라이트', '영수증',
-         '무드', '비포애프터', '할 일', '댓글창', '팔로우', '멈춤 화살표', '삭제 중', '릴스 프레임',
-         '키보드 비', '도장', '카운트다운', '토끼굴', '잡지 표지', '낙서']
+NAMES = ['The Noise', 'The Lineup', 'Locked On', 'Orbit', 'Lean-In', 'Backdrop Word', 'Spotlight', 'The Bill',
+         'Moody', 'Swipe', 'The To-Do', 'Comment Box', 'The Tap', 'Pause & Point', 'Uninstall', 'Reel Frame',
+         'Shortcut Rain', 'Reject Stamp', 'Countdown Flip', 'Rabbit Hole', 'Cover Star', 'Scribble']
 EFFECTS = {}
 ALIASES = {'the-noise': 'noise', 'the-lineup': 'lineup', 'bill': 'the-bill', 'to-do': 'todo', 'the-todo': 'todo', 'the-to-do': 'todo',
            'the-tap': 'tap', 'follow': 'tap', 'comment': 'comment-box', 'pause': 'pause-point', 'pause-and-point': 'pause-point',
@@ -45,7 +45,7 @@ ALIASES = {'the-noise': 'noise', 'the-lineup': 'lineup', 'bill': 'the-bill', 'to
            'imessage': 'messages', 'texts': 'messages', 'notifications': 'messages', 'grid': 'place-in-grid', 'profile-grid': 'place-in-grid'}
 LOOK_NAMES = {'glitter-spotlight': ('spotlight', 'sparkle'), 'glitter': ('spotlight', 'sparkle'),
               '반짝이': ('spotlight', 'sparkle'), '반짝이스포트라이트': ('spotlight', 'sparkle')}  # a named look of another effect
-# 한국어판: 한글 효과 이름 (띄어쓰기는 무시한다: "유리 위젯" = "유리위젯")
+# 한국어판: 공식 효과 이름은 영어 그대로. 아래 한글 별칭은 문서에 싣지 않는 예비용 (띄어쓰기는 무시한다)
 KO_NAMES = {'noise': '릴스더미 노이즈', 'lineup': '라인업', 'locked-on': '락온 조준', 'orbit': '궤도 오빗', 'lean-in': '줌인 펀치인',
             'backdrop-word': '뒤글자 배경글자', 'spotlight': '스포트라이트 조명', 'the-bill': '영수증', 'moody': '무드 색보정',
             'swipe': '비포애프터 스와이프', 'todo': '할일 투두', 'comment-box': '댓글 댓글창', 'tap': '팔로우 팔로우버튼',
@@ -2242,7 +2242,7 @@ def main():
     ap.add_argument('--list', action='store_true')
     a = ap.parse_args()
     if a.list:
-        for i, (k, (_, d)) in enumerate(EFFECTS.items()): print(f'{i + 1:2d}. {k:24s} {KO_NAMES.get(k, "").split()[0] if k in KO_NAMES else "":10s} {d}')
+        for i, (k, (_, d)) in enumerate(EFFECTS.items()): print(f'{i + 1:2d}. {k:24s} {d}')
         return
     if a.plan:
         src, dst = a.args[0], a.args[1]; plan = json.load(open(a.plan, encoding='utf-8-sig'))  # 윈도우 기본 인코딩(cp949)이 아니라 UTF-8로 읽는다
