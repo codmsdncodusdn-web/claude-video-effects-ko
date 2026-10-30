@@ -2231,6 +2231,8 @@ def load_cards(folder, thumbs):
 
 
 def main():
+    try: sys.stdout.reconfigure(encoding='utf-8', errors='replace')  # 윈도우 콘솔(cp949)에서도 한글 출력이 깨지지 않게
+    except Exception: pass
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument('args', nargs='*', help='[effect] input.mp4 output.mp4')
     ap.add_argument('--plan'); ap.add_argument('--start', type=float); ap.add_argument('--end', type=float)
