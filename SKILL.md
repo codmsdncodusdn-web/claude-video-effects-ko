@@ -1,11 +1,11 @@
 ---
 name: effects
-description: 말하는 영상에 효과 45개 중 하나를 넣는다(한국어판). orbit, spotlight, glass widgets, timeline, checklist, headline wall, comment box, phone fan, liquid glass graph, match-cut, iPhone toggles, LED sign, over-the-shoulder zoom, messages, place-in-grid 등. 얼굴을 따라가고 글자를 머리 뒤에 둘 수 있다. 사용자가 /effects 를 치거나, 효과 이름을 말하거나, 영상에 효과·줌·색보정·스티커·애니메이션을 넣어달라고 할 때 사용한다. Add any of 45 video effects to a talking-head video (Korean edition).
+description: 말하는 영상에 효과 45개 중 하나를 넣는다. orbit, spotlight, glass widgets, timeline, checklist, headline wall, comment box, phone fan, liquid glass graph, match-cut, iPhone toggles, LED sign, over-the-shoulder zoom, messages, place-in-grid 등. 얼굴을 따라가고 글자를 머리 뒤에 둘 수 있다. 사용자가 /effects 를 치거나, 효과 이름을 말하거나, 영상에 효과·줌·색보정·스티커·애니메이션을 넣어달라고 할 때 사용한다. Add any of 45 video effects to a talking-head video.
 ---
 
-# Effects 한국어판: 영상 효과 45개
+# Effects: 영상 효과 45개
 
-원작: claude-video-effects by Vibha Ramprakash (@vibha.in.progress), MIT. 한국어판: 플랫폼트리 (@platformtree).
+플랫폼트리 (@platformtree). Based on claude-video-effects by Vibha Ramprakash, MIT.
 
 사용자는 보통 개발자가 아니다. 답은 짧고 친절한 한국어로 하고, 작업은 대신 해주고, 명령어를 직접 치라고 하지 않는다.
 
@@ -46,7 +46,7 @@ description: 말하는 영상에 효과 45개 중 하나를 넣는다(한국어�
 `PY scripts/fx.py --list` 로 전체 목록(이름, 설명)을 볼 수 있다.
 
 ## 한글 글자
-- 한글이 들어간 글자는 자동으로 한글 폰트로 그려진다(굵은 글씨 → 프리텐다드, 세리프 → 나눔명조, 손글씨 → 나눔펜, 콘덴스드 → 검은고딕, 고정폭 → 나눔고딕코딩). 영어만 있는 글자는 원작 폰트 그대로다.
+- 한글이 들어간 글자는 자동으로 한글 폰트로 그려진다(굵은 글씨 → 프리텐다드, 세리프 → 나눔명조, 손글씨 → 나눔펜, 콘덴스드 → 검은고딕, 고정폭 → 나눔고딕코딩). 영어만 있는 글자는 영문 폰트로 그려진다.
 - 한 글자 안에 한글과 영어가 섞이면 전체가 한글 폰트로 나온다.
 - 한글은 영어보다 글자 폭이 넓다. 긴 문장은 `|`로 줄을 나누고, 큰 단어(`backdrop-word`, `led-sign`, `spotlight`)는 2~5글자가 가장 보기 좋다.
 - 숫자는 `19.7만`, `3,000`처럼 한국식으로 써도 숫자 올라가는 효과가 된다.

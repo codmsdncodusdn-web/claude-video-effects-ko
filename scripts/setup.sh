@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # One-time setup for the effects skill. Safe to run again: it prints READY when everything is in place.
-# 한국어판: 윈도우(Git Bash)에서도 동작한다. 윈도우의 가상환경 파이썬은 .venv/Scripts/python.exe 에 있다.
+# 윈도우(Git Bash)에서도 동작한다. 윈도우의 가상환경 파이썬은 .venv/Scripts/python.exe 에 있다.
 set -e
 cd "$(dirname "$0")/.."
 

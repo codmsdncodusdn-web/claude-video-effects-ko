@@ -4,7 +4,7 @@
 usage: python words.py input.mp4            -> prints "12.34  word" lines and saves input.words.json
 Uses faster-whisper (installed into the skill's .venv on first run). On a Mac with mlx-whisper installed, that is used instead.
 
-한국어판: 기본 언어는 한국어(WHISPER_LANG=ko), 기본 모델은 small(WHISPER_MODEL).
+기본 언어는 한국어(WHISPER_LANG=ko), 기본 모델은 small(WHISPER_MODEL).
 영어 영상이면 WHISPER_LANG=en, 언어 자동 감지는 WHISPER_LANG=auto.
 """
 import json, os, subprocess, sys

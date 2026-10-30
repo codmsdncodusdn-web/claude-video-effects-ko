@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""45 starter video effects for Claude — 한국어판 (플랫폼트리 @platformtree)
+"""45 starter video effects for Claude — 플랫폼트리 (@platformtree)
 Original: claude-video-effects by Vibha Ramprakash (@vibha.in.progress), MIT
 
 One effect:    python fx.py orbit in.mp4 out.mp4 --start 3.2 --end 6
@@ -19,7 +19,7 @@ FONT = {k: os.path.join(ROOT, 'fonts', v) for k, v in {
     'anton': 'Anton-Regular.ttf', 'mont': 'Montserrat.ttf', 'monts': 'Montserrat.ttf', 'montb': 'Montserrat.ttf',
     'didone': 'PlayfairDisplay.ttf', 'didoneb': 'PlayfairDisplay.ttf', 'didonei': 'PlayfairDisplay-Italic.ttf'}.items()}
 WGHT = {'ui': (24, 640), 'uim': (24, 540), 'uib': (32, 860), 'mont': (700,), 'monts': (600,), 'montb': (800,), 'didone': (500,), 'didoneb': (800,), 'didonei': (500,)}  # Inter variable: (optical size, weight)
-# 한국어판: 한글이 들어간 글자는 같은 느낌의 한글 폰트로 그린다 (영문 폰트에는 한글 글리프가 없다)
+# 한글이 들어간 글자는 같은 느낌의 한글 폰트로 그린다 (영문 폰트에는 한글 글리프가 없다)
 KO_FONT = {k: os.path.join(ROOT, 'fonts', v) for k, v in {
     'bold': 'PretendardVariable.ttf', 'serif': 'NanumMyeongjo-Regular.ttf', 'mono': 'NanumGothicCoding-Bold.ttf',
     'hand': 'NanumPenScript-Regular.ttf', 'ui': 'PretendardVariable.ttf', 'uim': 'PretendardVariable.ttf', 'uib': 'PretendardVariable.ttf',
@@ -45,7 +45,7 @@ ALIASES = {'the-noise': 'noise', 'the-lineup': 'lineup', 'bill': 'the-bill', 'to
            'imessage': 'messages', 'texts': 'messages', 'notifications': 'messages', 'grid': 'place-in-grid', 'profile-grid': 'place-in-grid'}
 LOOK_NAMES = {'glitter-spotlight': ('spotlight', 'sparkle'), 'glitter': ('spotlight', 'sparkle'),
               '반짝이': ('spotlight', 'sparkle'), '반짝이스포트라이트': ('spotlight', 'sparkle')}  # a named look of another effect
-# 한국어판: 공식 효과 이름은 영어 그대로. 아래 한글 별칭은 문서에 싣지 않는 예비용 (띄어쓰기는 무시한다)
+# 공식 효과 이름은 영어 그대로. 아래 한글 별칭은 문서에 싣지 않는 예비용 (띄어쓰기는 무시한다)
 KO_NAMES = {'noise': '릴스더미 노이즈', 'lineup': '라인업', 'locked-on': '락온 조준', 'orbit': '궤도 오빗', 'lean-in': '줌인 펀치인',
             'backdrop-word': '뒤글자 배경글자', 'spotlight': '스포트라이트 조명', 'the-bill': '영수증', 'moody': '무드 색보정',
             'swipe': '비포애프터 스와이프', 'todo': '할일 투두', 'comment-box': '댓글 댓글창', 'tap': '팔로우 팔로우버튼',
@@ -2163,7 +2163,7 @@ class Tracker:
         from mediapipe.tasks.python import vision
         from mediapipe.tasks.python.core.base_options import BaseOptions
         self.mp = mp
-        # 한국어판: 윈도우에서 경로에 한글이 있으면(예: 바탕 화면) 모델 파일을 경로로 못 연다. 바이트로 읽어서 넘긴다.
+        # 윈도우에서 경로에 한글이 있으면(예: 바탕 화면) 모델 파일을 경로로 못 연다. 바이트로 읽어서 넘긴다.
         with open(os.path.join(ROOT, 'models', 'selfie_segmenter.tflite'), 'rb') as fh: seg_model = fh.read()
         self.seg = vision.ImageSegmenter.create_from_options(vision.ImageSegmenterOptions(
             base_options=BaseOptions(model_asset_buffer=seg_model),
