@@ -1133,7 +1133,8 @@ def fx_tier_list(c, e):
     tx = cached(e, 'tx', lambda: text_img(e.o.get('item', '클로드'), rh * 0.36, 'uib', (255, 255, 255)))
     tl = tile.copy(); tl.alpha_composite(tx, ((tl.width - tx.width) // 2, (tl.height - tx.height) // 2 - 3))
     sx, sy = W * 0.86, c.fy + c.fw * 0.4
-    ex = bx - bd.width / 2 + 18 + pad * 3 + rh + tile.width / 2 - 10; ey = by - bd.height / 2 + 18 + pad + rh / 2
+    bm, tm = 18 * 2 + 10, 8 * 2 + 4  # shadowed()가 판과 칸 둘레에 붙이는 여백(blur*2 + dy)
+    ex = bx - bd.width / 2 + bm + pad * 3 + rh + tile.width / 2 - tm; ey = by - bd.height / 2 + bm + pad + rh / 2
     q = ease_back((c.lt - 0.45) / 0.4)
     if c.lt > 0.4: place(c, tl, sx + (ex - sx) * q, sy + (ey - sy) * q, 1.25 - 0.25 * clamp(q), 18 * (1 - clamp(q)), al, guard=True)
 
